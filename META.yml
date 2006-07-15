@@ -1,0 +1,17 @@
+--- #YAML:1.0
+name:                Test-HasVersion
+version:             0.01
+abstract:            ~
+license:             unknown
+generated_by:        ExtUtils::MakeMaker version 6.30_01
+author:              ~
+distribution_type:   module
+requires:     
+    ExtUtils::MakeMaker:           0
+    File::Find:                    0
+    File::Spec:                    0
+    Test::Builder::Tester:         1.03
+    Test::More:                    0
+meta-spec:
+    url: <http://module-build.sourceforge.net/META-spec-new.html>;
+    version: 1.1

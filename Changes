@@ -1,0 +1,11 @@
+Revision history for Perl extension Test-HasVersion.
+
+0.01  Sat Jul 15 2006
+        - first release to CPAN
+
+undef Wed Jul 12 2006
+        - Gabor Szabo posts a message to perl-qa@perl.org wondering
+          about a Test module to check modules in a distro
+          provide correct version information.
+          <d8a74af10607120341s465fec42o52ff2874b5eab5ce@mail.gmail.com>
+          http://www.nntp.perl.org/group/perl.qa/6384
