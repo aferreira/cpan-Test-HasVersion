@@ -1,4 +1,4 @@
-This is alpha release 0.01 of Test::HasVersion.
+This is alpha release 0.011 of Test::HasVersion.
 
 Test::HasVersion is a test module intented to check all
 Perl modules in a distribution have version numbers.

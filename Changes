@@ -1,5 +1,10 @@
 Revision history for Perl extension Test-HasVersion.
 
+0.011 Mon Jul 17 2006
+        - Test::Builder::Tester 1.04 restored compabibility
+          and demanded changes to t/02_basic.t
+        - minor tweaks in Makefile.PL (we a have a license there now)
+
 0.01  Sat Jul 15 2006
         - first release to CPAN
 
