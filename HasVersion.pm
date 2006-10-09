@@ -4,7 +4,7 @@ package Test::HasVersion;
 use strict;
 use warnings;
 
-our $VERSION = '0.011';
+our $VERSION = '0.012';
 
 =head1 NAME
 

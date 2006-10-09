@@ -3,5 +3,5 @@
 use strict;
 use warnings;
 
-use Test::HasVersion;
+use Test::HasVersion; our $VERSION = $Test::HasVersion::VERSION;
 all_pm_version_ok(@ARGV);

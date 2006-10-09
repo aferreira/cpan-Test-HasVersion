@@ -1,5 +1,9 @@
 Revision history for Perl extension Test-HasVersion.
 
+0.012 Sat Sep 7 2006
+        - Test::Builder is a prereq
+        - test_version has version (same as HasVersion.pm)
+
 0.011 Mon Jul 17 2006
         - Test::Builder::Tester 1.04 restored compabibility
           and demanded changes to t/02_basic.t

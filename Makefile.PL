@@ -7,6 +7,7 @@ WriteMakefile(
   NAME => 'Test::HasVersion',
   VERSION_FROM => 'HasVersion.pm',
   PREREQ_PM => {
+    'Test::Builder'         => 0,
     'ExtUtils::MakeMaker'   => 0,
     'File::Find'            => 0,
 
