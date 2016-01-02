@@ -1,5 +1,8 @@
 Revision history for Perl extension Test-HasVersion.
 
+0.013 Sat Jan 2 2016
+        - fix spelling error in manpage (CPAN #110709)
+
 0.012 Sat Sep 7 2006
         - Test::Builder is a prereq
         - test_version has version (same as HasVersion.pm)
