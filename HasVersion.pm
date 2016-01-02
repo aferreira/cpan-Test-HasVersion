@@ -71,19 +71,19 @@ But it will be. Wait for the upcoming releases.
 # most of the following code was borrowed from Test::Pod
 
 use Test::Builder;
-use ExtUtils::MakeMaker; # to lay down my hands on MM->parse_version
+use ExtUtils::MakeMaker;    # to lay down my hands on MM->parse_version
 
 my $Test = Test::Builder->new;
 
 our @EXPORTS = qw( pm_version_ok all_pm_version_ok all_pm_files );
 
 sub import {
-    my $self = shift;
+    my $self   = shift;
     my $caller = caller;
 
-    for my $func ( @EXPORTS ) {
+    for my $func (@EXPORTS) {
         no strict 'refs';
-        *{$caller."::".$func} = \&$func;
+        *{ $caller . "::" . $func } = \&$func;
     }
 
     $Test->exported_to($caller);
@@ -128,23 +128,24 @@ cannot be determined.
 =cut
 
 sub pm_version_ok {
-  my $file = shift;
-  my $name = @_ ? shift : "$file has version";
+    my $file = shift;
+    my $name = @_ ? shift : "$file has version";
 
-  if (!-f $file) {
-    $Test->ok(0, $name);
-    $Test->diag("$file does not exist");
-    return;
-  }
+    if ( !-f $file ) {
+        $Test->ok( 0, $name );
+        $Test->diag("$file does not exist");
+        return;
+    }
 
-  my $v = _pm_version($file);
-  my $ok = _is_valid_version($v);
-  $Test->ok($ok, $name);
-  #$Test->diag("$file $v ") if $ok && $noisy;
+    my $v  = _pm_version($file);
+    my $ok = _is_valid_version($v);
+    $Test->ok( $ok, $name );
+
+    #$Test->diag("$file $v ") if $ok && $noisy;
 }
 
 sub _is_valid_version {
-  defined $_[0] && $_[0] ne 'undef';
+    defined $_[0] && $_[0] ne 'undef';
 }
 
 =item B<all_pm_version_ok>
@@ -166,11 +167,11 @@ the plan is left untouched.
 =cut
 
 sub all_pm_version_ok {
-  my @pm_files = all_pm_files(@_);
-  $Test->plan(tests => scalar @pm_files) unless $Test->has_plan;
-  for (@pm_files) {
-    pm_version_ok($_);
-  }
+    my @pm_files = all_pm_files(@_);
+    $Test->plan( tests => scalar @pm_files ) unless $Test->has_plan;
+    for (@pm_files) {
+        pm_version_ok($_);
+    }
 }
 
 #=begin private
@@ -190,20 +191,20 @@ Returns all PM files under the given directories.
 use File::Find qw(find);
 
 sub _list_pm_files {
-  my @INC = @_;
-  my @files;
+    my @INC = @_;
+    my @files;
 
-  my $wanted = sub {
-    push @files, $_ if /\.pm$/;
-  };
+    my $wanted = sub {
+        push @files, $_ if /\.pm$/;
+    };
 
-  for (@INC) {
-    my $base = $_;
-    if (-d $base) {
-      find({ wanted => $wanted, no_chdir => 1 }, $base);
+    for (@INC) {
+        my $base = $_;
+        if ( -d $base ) {
+            find( { wanted => $wanted, no_chdir => 1 }, $base );
+        }
     }
-  }
-  return sort @files;
+    return sort @files;
 }
 
 =item B<all_pm_files>
@@ -217,23 +218,26 @@ semantics of the previous function C<all_pm_version_ok>.
 =cut
 
 sub all_pm_files {
-  my @args;
-  if (@_) {
-    @args = @_;
-  } else {
-    @args = ( grep(-f, glob("*.pm")), "lib/" );
-  }
-  my @pm_files;
-  for (@args) {
-    if (-f) {
-      push @pm_files, $_;
-    } elsif (-d) {
-      push @pm_files, _list_pm_files($_);
-    } else {
-      # not a file or directory: ignore silently 
+    my @args;
+    if (@_) {
+        @args = @_;
     }
-  }
-  return @pm_files;
+    else {
+        @args = ( grep( -f, glob("*.pm") ), "lib/" );
+    }
+    my @pm_files;
+    for (@args) {
+        if (-f) {
+            push @pm_files, $_;
+        }
+        elsif (-d) {
+            push @pm_files, _list_pm_files($_);
+        }
+        else {
+            # not a file or directory: ignore silently
+        }
+    }
+    return @pm_files;
 
 }
 

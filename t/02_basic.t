@@ -9,10 +9,10 @@ use Test::More;
 # tests pm_version_ok
 
 BEGIN {
-  use_ok('Test::HasVersion');
+    use_ok('Test::HasVersion');
 }
 
-ok(chdir "t/eg", "cd t/eg");
+ok( chdir "t/eg", "cd t/eg" );
 
 test_out("ok 1 - A.pm has version");
 pm_version_ok("A.pm");
