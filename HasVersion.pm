@@ -37,7 +37,7 @@ Well, that's the module you have been looking for.
 Use it!
 
 Do you wanna check someone else's distribution
-to make sure the author have not commited the sin of
+to make sure the author have not committed the sin of
 leaving Perl modules without a version that can be used
 to tell if you have this or that feature? C<Test::HasVersion>
 is also for you, nasty little fellow.
