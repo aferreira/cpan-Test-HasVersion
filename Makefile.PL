@@ -25,6 +25,13 @@ WriteMakefile(
     ($EUMM_VERSION >= 6.30_01 ? (
             LICENSE => 'perl',
     ) : ()),
+    ($EUMM_VERSION > 6.4501 ? (
+            META_MERGE => {
+                resources => {
+                    repository => 'http://github.com/aferreira/cpan-Test-HasVersion',
+		}
+            },
+    ) : ()),
 
 );
 
