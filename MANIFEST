@@ -22,5 +22,3 @@ t/eg/inc/Foo.pm
 t/eg/lib/B.pm
 t/eg/lib/B/C.pm
 t/eg/MANIFEST
-
-META.yml                                 Module meta-data (added by MakeMaker)
