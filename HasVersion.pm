@@ -168,6 +168,7 @@ the plan is left untouched.
 
 sub all_pm_version_ok {
     my @pm_files = all_pm_files(@_);
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
     $Test->plan( tests => scalar @pm_files ) unless $Test->has_plan;
     for (@pm_files) {
         pm_version_ok($_);
