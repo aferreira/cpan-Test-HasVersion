@@ -11,7 +11,7 @@ bin/test_version
 t/01_use.t
 t/02_basic.t
 t/03_all_pm_files.t
-t/04_all.ok.t
+t/04_all_ok.t
 t/09_self_test.t
 t/97_has_version.t
 t/98_pod-coverage.t
