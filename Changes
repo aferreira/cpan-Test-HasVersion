@@ -1,5 +1,10 @@
 Revision history for Perl extension Test-HasVersion.
 
+0.014 Sat Jan 2 2016
+        - add LICENSE file to the distribution (#1)
+        - fix all_pm_version_ok() failure reporting (CPAN #78758)
+        - rewrite t/04_all_ok.t using Test::Builder::Tester (CPAN #78758)
+
 0.013 Sat Jan 2 2016
         - fix spelling error in manpage (CPAN #110709)
 
